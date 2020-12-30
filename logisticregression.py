@@ -66,27 +66,6 @@ def predict(theta, x):
     return np.round(sigmoid(x.dot(theta.T)))
 
 
-os.chdir("C:\\Users\\Kelvin\\ML Coursera\\Exercise2")
-data = np.loadtxt(os.path.join("Data", "ex2data1.txt"), delimiter=",")
-
-X = data[:, 0:2]
-y = data[:, 2]
-
-ones = np.ones((X.shape[0], X.shape[1]+1))
-ones[:, 1:] = X
-X = ones
-
-# theta_i = np.zeros(3)
-theta_i = np.ones(3)
-
-theta_f, J_history = grad_descent(X, y, theta_i, 0.1, 10000)
-
-predictions = predict(theta_f, X)
-count = 0
-for i in range(100):
-    if predictions[i] == y[i]:
-        count += 1
-print(count)
 
 
 
