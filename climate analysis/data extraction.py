@@ -32,7 +32,7 @@ def extract_data(path):
 
             globals()[folder] = globals()[folder].append(temp)
 
-    return 
+    return globals()[folder]
 
 
 def process_features(datasets):
